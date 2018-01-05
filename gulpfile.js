@@ -62,3 +62,17 @@ gulp.task('bowerCSS', function() {
 });
 //run bowerCSS and bowerJS//
 gulp.task('bower', ['bowerJS', 'bowerCSS']);
+//clean up the old build and tmp folders//
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+//for build for production and cleaning the files//
+gulp.task("build", ['clean'], function(){
+  if (buildProduction) {
+    gulp.start('minifyScripts');
+  } else {
+    gulp.start('jsBrowserify');
+  }
+  gulp.start('bower');
+  gulp.start('cssBuild');
+});
