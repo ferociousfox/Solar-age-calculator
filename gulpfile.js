@@ -47,3 +47,18 @@ gulp.task("minifyScripts", ["jsBrowserify"], function(){
     .pipe(uglify())
     .pipe(gulp.dest("./build/js"));
 });
+//use bower to concat and minify all vendor js files//
+gulp.task('bowerJS', function() {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/js'));
+});
+//use bower to concat and minify all vendor css files //
+gulp.task('bowerCSS', function() {
+  return gulp.src(lib.ext('css').files)
+    .pipe(concat('vendor.css'))
+    .pipe(gulp.dest('./build/css'));
+});
+//run bowerCSS and bowerJS//
+gulp.task('bower', ['bowerJS', 'bowerCSS']);
