@@ -76,3 +76,11 @@ gulp.task("build", ['clean'], function(){
   gulp.start('bower');
   gulp.start('cssBuild');
 });
+//build a local server to work on your development build//
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
