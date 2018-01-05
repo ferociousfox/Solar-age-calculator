@@ -84,3 +84,30 @@ gulp.task('serve', function() {
       index: "index.html"
     }
   });
+  // set up gulp watch to update the server//
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch("scss/*.scss", ['cssBuild']);
+});
+//subtasks for gulp watch to reload the server//
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+
+gulp.task('htmlBuild', function(){
+  browserSync.reload();
+});
+
+gulp.task('cssBuild', function() {
+  return gulp.src('./scss/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream());
+});
