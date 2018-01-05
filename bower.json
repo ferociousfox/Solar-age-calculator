@@ -1,0 +1,20 @@
+{
+  "name": "space-time-cr",
+  "description": "#### _an age and time calculator_",
+  "main": "index.js",
+  "authors": [
+    "Shane Ryan <onyx.shane@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
