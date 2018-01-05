@@ -37,6 +37,9 @@ gulp.task('concatInterface', function() {
 //making all files ready for the browser//
 gulp.task('jsBrowserify', ['concatInterface'], function() {
   return browserify({ entries: ['./tmp/allConcat.js'] })
+  .transform(babelify.configure({
+      presets: ['es2015']
+    }))
     .bundle()
     .pipe(source('app.js'))
     .pipe(gulp.dest('./build/js'));
