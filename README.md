@@ -12,14 +12,6 @@ _a user interface that will give the user a variety of outputs_
 
   * _user should be able to enter their age and receive a variety of different outputs_
 
-  * _take in a  user's age and output that amount of time in seconds_
-    * _input: 30
-    * _output: 2592000_
-
-  * _take in user's age and output number of seconds from that day to current date_
-    * _input: 30_
-    * _output: 2592000_
-
   * _take in user's age and calculate users age in "mercury years"_
     * _input: 30_
     * _output: 125_
@@ -35,6 +27,10 @@ _a user interface that will give the user a variety of outputs_
   * _take in user's age and calculate users age in "jupiter years"_
     * _input: 30_
     * _output: 2_
+
+  * _take in user's age and output number of seconds from that day to current date_
+    * _input: 30_
+    * _output: 2592000_
 
   * _take in user's birthday and calculate seconds they have been alive up to now_
     * _input: 1/3/1988_
