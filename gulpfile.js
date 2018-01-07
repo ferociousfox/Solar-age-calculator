@@ -109,7 +109,7 @@ gulp.task('htmlBuild', ['bower'], function(){
 gulp.task('cssBuild', ['bower'], function(){
   return gulp.src('scss/*.scss')
   .pipe(sourcemaps.init())
-  .pipe(sass())
+  // .pipe(sass())
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./build/css'))
   .pipe(browserSync.stream());

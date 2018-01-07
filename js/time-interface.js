@@ -1,38 +1,22 @@
 
+import { User } from './../js/scripts.js';
 
 $(document).ready(function(){
-  $('#submit').submit(function(event) {
+  alert("document Ready!");
+  $('#calculate').submit(function(event) {
     event.preventDefault();
-    var dOB = $('#birthday').val();
+    alert('submit!');
+    // var dOB = $('#birthday').val();
     var firstName = $('#first-name').val();
     var lastName = $('#last-name').val();
-    var userAge = $('#user-age').val();
+    var userAge = parseInt($('#user-age').val());
     var user = new User(firstName, lastName, userAge);
+    console.log(user);
 
-    $('#your-mercury-age').append();
-    $('#your-venus-age').append();
-    $('#your-earth-age').append();
-    $('#your-mars-age').append();
-    $('#your-jupiter-age').append();
-  })
+    $('#your-mercury-age').append(user.mercuryAge());
+    $('#your-venus-age').append(user.venusAge());
+    $('#your-earth-age').append(userAge);
+    $('#your-mars-age').append(user.marsAge());
+    $('#your-jupiter-age').append(user.jupiterAge());
+  });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-// import { test } from './../js/scripts.js';
-//
-// $(document).ready(function(){
-//   alert('document ready');
-//   let backendTest = test();
-//   console.log(backendTest);
-//   $('h1').append(backendTest);
-// });
