@@ -1,5 +1,5 @@
 
-import { User } from './../js/scripts.js';
+import { User } from './../js/User.js';
 
 $(document).ready(function(){
   alert("document Ready!");
@@ -12,11 +12,11 @@ $(document).ready(function(){
     var userAge = parseInt($('#user-age').val());
     var user = new User(firstName, lastName, userAge);
     console.log(user);
-
-    $('#your-mercury-age').append(user.mercuryAge());
-    $('#your-venus-age').append(user.venusAge());
-    $('#your-earth-age').append(userAge);
-    $('#your-mars-age').append(user.marsAge());
-    $('#your-jupiter-age').append(user.jupiterAge());
+    $('#user-id').append(user.firstName + " " + user.lastName + ' you are');
+    $('#your-mercury-age').append(user.mercuryAge() + ' seconds old');
+    $('#your-venus-age').append(user.venusAge() + ' seconds old');
+    $('#your-earth-age').append(user.ageInSeconds() + ' seconds old');
+    $('#your-mars-age').append(user.marsAge() + ' seconds old');
+    $('#your-jupiter-age').append(user.jupiterAge() + ' seconds old');
   });
 });

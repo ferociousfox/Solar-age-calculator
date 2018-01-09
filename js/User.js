@@ -6,20 +6,19 @@ export class User {
     console.log(userAge);
   }
 
+  ageInSeconds() {
+    return this.userAge * 31536000;
+  }
   mercuryAge() {
-    const mercury = 0.24;
-    return this.userAge / mercury;
+    return (this.userAge * 31536000) / 0.24;
   }
   venusAge() {
-    const venus = 0.62;
-    return this.userAge / venus;
+    return (this.userAge * 31536000) / 0.62;
   }
   marsAge() {
-    const mars = 1.88;
-    return this.userAge / mars;
+    return (this.userAge * 31536000) / 1.88;
   }
   jupiterAge() {
-    const jupiter = 11.86;
-    return this.userAge / jupiter;
+    return (this.userAge * 31536000) / 11.86;
   }
 }
