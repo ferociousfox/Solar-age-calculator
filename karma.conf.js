@@ -1,7 +1,7 @@
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ['jquery-3.2.1', 'jasmine', 'browserify'],
+    frameworks: ['jquery-3.2.1', 'jasmine', 'browserify', 'jasmine-matchers'],
     files: [
       'js/*.js',
       'spec/*-spec.js',
@@ -17,13 +17,14 @@ module.exports = function(config) {
       'karma-browserify',
       'karma-jasmine',
       'karma-chrome-launcher',
-      'karma-jasmine-html-reporter'
+      'karma-jasmine-html-reporter',
+      'karma-jasmine-mathcers'
     ],
     browserify: {
          debug: true,
          transform: [ [ 'babelify', {presets: ["es2015"]} ] ]
        },
-       
+
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
