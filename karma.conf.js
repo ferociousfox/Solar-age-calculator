@@ -18,7 +18,7 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-jasmine-html-reporter',
-      'karma-jasmine-mathcers'
+      'karma-jasmine-matchers'
     ],
     browserify: {
          debug: true,
